@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ActiveZone
   - Activator
+  - Note
   layers:
   - Default
   - TransparentFX
