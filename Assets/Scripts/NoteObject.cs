@@ -6,33 +6,22 @@ public class NoteObject : MonoBehaviour
 {
     //Скрипт, который определяет, можем ли мы в данный момент нажать нотку (находится ли она в активной зоне с тегом ActiveZone),
     //и если можем, то была ли она нажата? 
-    //Если была - добавляем очков игроку.
+    //Если была - добавляем очков игроку, удаляем нотку.
     
     public bool _canBePressed;
-    
+    public static int _progressAmount;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        _progressAmount = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began))
-        {
-            Ray raycast = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            RaycastHit raycastHit;
-            if (Physics.Raycast(raycast, out raycastHit))
-            {
-                Debug.Log("Something Hit");
-               
-                if (raycastHit.collider.CompareTag("Note"))
-                {
-                    Debug.Log("Note hit");
-                }
-            }
-        }
+        //OnMouseDown();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -48,5 +37,17 @@ public class NoteObject : MonoBehaviour
         {
             _canBePressed = false;
         }
+    }
+
+    void OnMouseDown()
+    {
+        if (_canBePressed == true)
+        {
+         _progressAmount = _progressAmount + 10;
+                // Destroy the gameObject after clicking on it
+         Destroy(gameObject);
+         Debug.Log("NoteHit, progress:" + _progressAmount);
+        }
+        
     }
 }
