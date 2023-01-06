@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : MonoBehaviour
 {
 
-    public string newGameScene;
+    public string newScene;
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +20,8 @@ public class SceneChanger : MonoBehaviour
         
     }
 
-    public void NewGame()
+    public void ChangeScene()
     {
-        SceneManager.LoadScene(newGameScene);
+        SceneManager.LoadScene(newScene);
     }
 }
