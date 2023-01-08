@@ -35,6 +35,13 @@ public class ProgressBarScript : MonoBehaviour
             slider.maxValue = 20000;
             Debug.Log("Slider min value reset =" + slider.minValue);
         }
+
+        if (ProgressStorage._progressAmountStorage >= 20000)
+        {
+            slider.minValue = 20000;
+            slider.maxValue = 25000;
+            Debug.Log("Slider min value reset =" + slider.minValue);
+        }
     }
 
 }
