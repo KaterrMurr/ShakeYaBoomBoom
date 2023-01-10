@@ -10,10 +10,12 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator coroutine;
 
+    public static GameManager instance;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        instance = this;
     }
 
     // Update is called once per frame
@@ -27,8 +29,7 @@ public class GameManager : MonoBehaviour
                 theBS._hasStarted = true;
                 coroutine = WaitAndStartPlaying(5.0f);
                 StartCoroutine(coroutine);
-                Debug.Log("Корутина в условии пошла");
-                
+                Debug.Log("Корутина в условии пошла");                
             }
         }
     }
@@ -39,4 +40,15 @@ public class GameManager : MonoBehaviour
         theMusic.Play();
         Debug.Log("Музыка пошла");
     }
+
+    public void NoteHit()
+    {
+        Debug.Log("Note hit on time");
+    }
+
+    public void NoteMissed()
+    {
+        Debug.Log("Note missed");
+    }
+
 }

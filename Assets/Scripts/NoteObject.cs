@@ -20,7 +20,6 @@ public class NoteObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //OnMouseDown();
         
     }
 
@@ -36,6 +35,7 @@ public class NoteObject : MonoBehaviour
         if (other.tag == "ActiveZone")
         {
             _canBePressed = false;
+            GameManager.instance.NoteMissed();
         }
     }
 
@@ -43,6 +43,7 @@ public class NoteObject : MonoBehaviour
     {
         if (_canBePressed == true)
         {
+            GameManager.instance.NoteHit();
          _progressAmount = _progressAmount + 10;
                 // Destroy the gameObject after clicking on it
          Destroy(gameObject);
