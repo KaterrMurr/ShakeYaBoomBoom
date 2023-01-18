@@ -28,6 +28,7 @@ public class NoteObject : MonoBehaviour
         if (other.tag == "ActiveZone")
         {
             _canBePressed = true;
+            Debug.Log("Active Zone!");
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -36,6 +37,8 @@ public class NoteObject : MonoBehaviour
         {
             _canBePressed = false;
             GameManager.instance.NoteMissed();
+            Debug.Log("Inactive Zone!");
+
         }
     }
 

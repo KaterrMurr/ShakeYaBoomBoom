@@ -14,13 +14,17 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public static int currentScore;
-    public static int scorePerNote = 100;
+    public static int scorePerNote = 10;
 
-    
+    public static int currentMultiplier;
+    public static int multiplierTracker;
+    public int[] multiplierThresholds;
+
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
+        currentMultiplier = 1;
     }
 
     // Update is called once per frame
@@ -49,7 +53,19 @@ public class GameManager : MonoBehaviour
     public void NoteHit()
     {
         Debug.Log("Note hit on time");
-        currentScore += scorePerNote;
+
+        if (currentMultiplier - 1 < multiplierThresholds.Length)
+        {
+            multiplierTracker++;
+            if (multiplierThresholds[currentMultiplier - 1] <= multiplierTracker)
+            {
+                multiplierTracker = 0;
+                currentMultiplier++;
+                Debug.Log("Current Multiplier" + currentMultiplier);
+            }
+        }
+        
+        currentScore += scorePerNote * currentMultiplier;
         
     }
 
