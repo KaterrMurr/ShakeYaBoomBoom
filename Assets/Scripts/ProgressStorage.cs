@@ -14,13 +14,13 @@ public class ProgressStorage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _progressAmountStorage = NoteObject._progressAmount;
+        _progressAmountStorage = GameManager.currentScore;
     }
 
     // Update is called once per frame
     void Update()
     {
-        _progressAmountStorage = NoteObject._progressAmount;
-        Debug.Log("Баллов за нотки: " + _progressAmountStorage);
+        _progressAmountStorage = GameManager.currentScore;
+        Debug.Log("Общий счет сохранен: " + GameManager.currentScore);
     }
 }

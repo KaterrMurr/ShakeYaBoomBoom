@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
+    public static int currentScore;
+    public static int scorePerNote = 100;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +49,8 @@ public class GameManager : MonoBehaviour
     public void NoteHit()
     {
         Debug.Log("Note hit on time");
+        currentScore += scorePerNote;
+        
     }
 
     public void NoteMissed()

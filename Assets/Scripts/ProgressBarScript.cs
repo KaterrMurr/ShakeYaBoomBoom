@@ -6,15 +6,17 @@ using UnityEngine.UI;
 public class ProgressBarScript : MonoBehaviour
 {
     public Slider slider;
+
     private void Awake()
     {
         DontDestroyOnLoad(this);
     }
-
+        
     private void Update()
     {
-        slider.value = ProgressStorage._progressAmountStorage;
-        Debug.Log("Slider Progress value =" + slider.value);
+        slider.value = GameManager.currentScore;
+
+        Debug.Log("Slider value =" + slider.value);
         if (ProgressStorage._progressAmountStorage >= 5000)
         {
             slider.minValue = 5000;
