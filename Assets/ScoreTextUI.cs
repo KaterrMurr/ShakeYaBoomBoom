@@ -8,7 +8,6 @@ public class ScoreTextUI : MonoBehaviour
 {
     public Slider slider;
     private TextMeshProUGUI scoreTextUI;
-  //  public static int scoreText;
     
     // Start is called before the first frame update
     void Start()

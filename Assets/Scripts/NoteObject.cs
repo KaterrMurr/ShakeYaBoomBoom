@@ -31,6 +31,16 @@ public class NoteObject : MonoBehaviour
             Debug.Log("Active Zone!");
         }
     }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.tag == "ActiveZone")
+        {
+            _canBePressed = true;
+            Debug.Log("Active STAY Zone!");
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "ActiveZone")
