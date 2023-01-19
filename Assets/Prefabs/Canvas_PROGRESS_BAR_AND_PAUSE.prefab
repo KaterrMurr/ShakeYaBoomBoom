@@ -356,8 +356,9 @@ GameObject:
   - component: {fileID: 8652553261731060967}
   - component: {fileID: 8652553261731060966}
   - component: {fileID: 8652553261731060985}
+  - component: {fileID: 7861023956171512244}
   m_Layer: 5
-  m_Name: SETTINGS_Button
+  m_Name: RESTART_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -465,7 +466,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8652553261731060966}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7861023956171512244}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7861023956171512244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8652553261731060987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7314ad0c371d6429928453a916260d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newScene: L1
 --- !u!1 &8652553261817324660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,7 +1222,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SETTINGS
+  m_text: RESTART
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 35a7db2a22b672641b4c07cd9f4e0f0e, type: 2}
   m_sharedMaterial: {fileID: -8514401024693871551, guid: 35a7db2a22b672641b4c07cd9f4e0f0e, type: 2}
