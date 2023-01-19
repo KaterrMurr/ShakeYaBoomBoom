@@ -6,22 +6,22 @@ using TMPro;
 public class MultiplierTextToString : MonoBehaviour
 {
     TextMeshProUGUI multiplierTextUI;
-    public GameManager gameManager;
-   
+    private int multiplierToPopUp;
+
 
     // Start is called before the first frame update
     void Start()
     {
         multiplierTextUI = GetComponent<TextMeshProUGUI>();
-        gameManager = GetComponent<GameManager>();
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        multiplierTextUI.text = "x" + GameManager.currentScore;
-            
-
+        multiplierToPopUp = GameManager.currentMultiplier;
+        multiplierTextUI.text = multiplierToPopUp.ToString();
+    
     }
 }

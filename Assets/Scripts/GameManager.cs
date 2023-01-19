@@ -9,7 +9,10 @@ public class GameManager : MonoBehaviour
     public bool startPlaying;
     public BeatScroller theBS;
 
+    public Countdown countdown;
+
     public IEnumerator coroutine;
+    public IEnumerator waitAfterHitNote;
 
     public static GameManager instance;
 
@@ -20,11 +23,14 @@ public class GameManager : MonoBehaviour
     public static int multiplierTracker;
     public int[] multiplierThresholds;
 
+    public static bool noteHit;
+
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
         currentMultiplier = 1;
+        waitAfterHitNote = WaitAfterHitNote(0.2f);
     }
 
     // Update is called once per frame
@@ -36,7 +42,8 @@ public class GameManager : MonoBehaviour
             {
                 startPlaying = true;
                 theBS._hasStarted = true;
-                coroutine = WaitAndStartPlaying(5.0f);
+                countdown.gameObject.SetActive(true);
+                coroutine = WaitAndStartPlaying(3.0f);
                 StartCoroutine(coroutine);
                 Debug.Log("Корутина в условии пошла");                
             }
@@ -45,7 +52,8 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator WaitAndStartPlaying(float waitTime)
     {
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(3.0f);
+        countdown.gameObject.SetActive(false);
         theMusic.Play();
         Debug.Log("Музыка пошла");
     }
@@ -53,6 +61,7 @@ public class GameManager : MonoBehaviour
     public void NoteHit()
     {
         Debug.Log("Note hit on time");
+        noteHit = true;
 
         if (currentMultiplier - 1 < multiplierThresholds.Length)
         {
@@ -66,8 +75,17 @@ public class GameManager : MonoBehaviour
         }
         
         currentScore += scorePerNote * currentMultiplier;
-        
+        StartCoroutine(waitAfterHitNote);
+
     }
+
+    public IEnumerator WaitAfterHitNote(float waitTime)
+    {
+        yield return new WaitForSeconds(0.2f);
+        noteHit = false;
+
+    }
+
 
     public void NoteMissed()
     {

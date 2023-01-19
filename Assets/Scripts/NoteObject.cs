@@ -9,12 +9,11 @@ public class NoteObject : MonoBehaviour
     //Если была - добавляем очков игроку, удаляем нотку.
     
     public bool _canBePressed;
-    //   public static int _progressAmount; - счет переехал в GameManager
 
     // Start is called before the first frame update
     void Start()
     {
-       // _progressAmount = 0;
+       
     }
 
     // Update is called once per frame
@@ -57,10 +56,10 @@ public class NoteObject : MonoBehaviour
         if (_canBePressed == true)
         {
             GameManager.instance.NoteHit();
-         //_progressAmount = _progressAmount + 10; - счет переехал в GameManager
-                // Destroy the gameObject after clicking on it
+         
+          // Destroy the gameObject after clicking on it
          Destroy(gameObject);
-         Debug.Log("NoteHit");
+         Debug.Log("NoteDestroyed");
         }
         
     }

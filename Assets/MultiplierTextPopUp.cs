@@ -22,7 +22,7 @@ public class MultiplierTextPopUp : MonoBehaviour
     void Update()
     {
 
-        if (GameManager.currentMultiplier == 2)
+        if (GameManager.currentMultiplier == 2 && GameManager.noteHit == true)  //если в гейм менеджере переменная noteHit = true && GameManager.currentMultiplier = 2
         {
             StartCoroutine(PlayAndDieAgain(0.2f));
         }
