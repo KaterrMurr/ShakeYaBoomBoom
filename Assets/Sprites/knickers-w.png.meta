@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cc717290085c3744785217f2991f651d
+guid: 8260acd10d4e8be45814bbf69ab58964
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -115,40 +115,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: sneakers_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 136
-        width: 512
-        height: 240
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e80ed37a358b70f498974bdee7185aa4
-      internalID: -610053514
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6fa9650782399b94190f57bbf2e5f69a
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      sneakers_0: -610053514
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

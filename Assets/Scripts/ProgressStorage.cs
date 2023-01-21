@@ -34,23 +34,23 @@ public class ProgressStorage : MonoBehaviour
 
         if (BoosterMultiplier.multiplierBoosterReceived == true)
         {
-          
-            BoosterCollider.colliderBoosterReceived = false;
+                      
             GameManager.currentMultiplier = GameManager.multiplierTracker + 3;
             Debug.Log("Множитель увеличен");
             ChangeScaleBack();
+            BoosterCollider.colliderBoosterReceived = false;
         }
     }
 
     public void ChangeScale()
     {
-        noteTransform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+        noteTransform.localScale = new Vector3(2.2f, 2.2f, 2.2f);
         Debug.Log("ScaleChanged");
     }
 
     public void ChangeScaleBack()
     {
-        noteTransform.localScale = new Vector3(2f, 2f, 2f);
+        noteTransform.localScale = new Vector3(1.7f, 1.7f, 1.7f);
         Debug.Log("ScaleReturned");
     }
 
