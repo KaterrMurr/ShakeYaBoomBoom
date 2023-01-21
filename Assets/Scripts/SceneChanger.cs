@@ -7,6 +7,7 @@ public class SceneChanger : MonoBehaviour
 {
 
     public string newScene;
+    public bool sceneChanged;
 
     // Start is called before the first frame update
     void Start()
@@ -23,5 +24,6 @@ public class SceneChanger : MonoBehaviour
     public void ChangeScene()
     {
         SceneManager.LoadScene(newScene);
+        sceneChanged = true;
     }
 }

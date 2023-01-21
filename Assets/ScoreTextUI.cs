@@ -19,7 +19,7 @@ public class ScoreTextUI : MonoBehaviour
     void Update()
     {
         slider.value = GameManager.currentScore;
-        scoreTextUI.text = slider.value.ToString();
+        scoreTextUI.text = "Score: " + slider.value.ToString();
 
     }
 }

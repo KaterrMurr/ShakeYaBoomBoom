@@ -44,6 +44,12 @@ public class ProgressBarScript : MonoBehaviour
             slider.maxValue = 25000;
             Debug.Log("Slider min value reset =" + slider.minValue);
         }
+
+        
+
+
     }
+
+    
 
 }
