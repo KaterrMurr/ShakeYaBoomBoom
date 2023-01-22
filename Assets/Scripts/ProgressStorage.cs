@@ -12,7 +12,7 @@ public class ProgressStorage : MonoBehaviour
     {
         DontDestroyOnLoad(this);
        // BoosterCollider.colliderBoosterReceived = false;
-        BoosterMultiplier.multiplierBoosterReceived = false;
+       // BoosterMultiplier.multiplierBoosterReceived = false;
         if (instance != null && instance != this)
         {
            // Destroy(this.gameObject);
@@ -31,8 +31,8 @@ public class ProgressStorage : MonoBehaviour
         instance = this;
 
         _progressAmountStorage = GameManager.currentScore;
-        BoosterCollider.colliderBoosterReceived = false;
-        BoosterMultiplier.multiplierBoosterReceived = false;
+       // BoosterCollider.colliderBoosterReceived = false;
+      //  BoosterMultiplier.multiplierBoosterReceived = false;
         
     }
 
@@ -47,13 +47,13 @@ public class ProgressStorage : MonoBehaviour
            BoosterMultiplier.multiplierBoosterReceived = false;
             ChangeScale();
             Debug.Log("Нотки увеличены");
-            GameManager.currentMultiplier = 1;
+            //GameManager.currentMultiplier = 1;
         }
 
         if (BoosterMultiplier.multiplierBoosterReceived == true)
         {
-
-            GameManager.currentMultiplier = GameManager.multiplierTracker += 3;
+            GameManager.currentMultiplier = 5;
+            //GameManager.currentMultiplier = GameManager.multiplierTracker += 3;
             Debug.Log("Множитель увеличен");
             ChangeScaleBack();
             BoosterCollider.colliderBoosterReceived = false;
@@ -63,10 +63,10 @@ public class ProgressStorage : MonoBehaviour
          {
              GameManager.currentMultiplier = 1;
          }*/
-        if (BoosterCollider.multiplierBoosterReceived == true)
+       /* if (BoosterCollider.multiplierBoosterReceived == true)
         {
             GameManager.currentMultiplier = 3;
-        }
+        }*/
     }
 
     public void ChangeScale()
