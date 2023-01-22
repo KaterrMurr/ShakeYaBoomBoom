@@ -8,6 +8,11 @@ public class BoosterMultiplier : MonoBehaviour
     public static bool multiplierBoosterReceived;
 
     //public Transform noteTransform;
+    void Start()
+    {
+
+    }
+
 
     public void BoosterReceived()
     {

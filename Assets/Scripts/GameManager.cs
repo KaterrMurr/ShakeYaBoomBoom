@@ -29,7 +29,16 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        currentMultiplier = 1;
+        if (BoosterCollider.colliderBoosterReceived == false && BoosterMultiplier.multiplierBoosterReceived == false)
+        {
+            currentMultiplier = 1;
+        }
+
+        if (BoosterCollider.multiplierBoosterReceived == false )
+        {
+            currentMultiplier = 1;
+        }
+        //  currentMultiplier = 1;
         waitAfterHitNote = WaitAfterHitNote(0.2f);
     }
 

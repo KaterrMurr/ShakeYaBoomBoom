@@ -9,6 +9,11 @@ public class BoosterCollider : MonoBehaviour
 
     //public Transform noteTransform;
 
+    void Start()
+    {
+       
+    }
+
     public void BoosterReceived()
     {
         colliderBoosterReceived = true;
